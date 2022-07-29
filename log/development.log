@@ -2876,3 +2876,62 @@ Migrating to CreateUsers (20220524075547)
   [1m[36mTRANSACTION (1.9ms)[0m  [1m[35mCOMMIT[0m
   [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(5191046984072633250)[0m
   [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2022-07-29 18:38:15 +0530
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/yuvaprateeksingh/.rvm/gems/ruby-2.7.6/gems/railties-6.1.5.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/yuvaprateeksingh/.rvm/gems/ruby-2.7.6/gems/railties-6.1.5.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.2ms | Allocations: 7)
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.0ms | Allocations: 232)
+
+
+Started GET "/api_v1_categories" for ::1 at 2022-07-29 18:38:37 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/api_v1_categories"):
+  
+Started GET "/api/v1/categories" for ::1 at 2022-07-29 18:38:51 +0530
+Processing by Api::V1::CategoriesController#index as HTML
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories"[0m
+  ↳ app/controllers/api/v1/categories_controller.rb:12:in `index'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/categories_controller.rb:12:in `index'
+Completed 200 OK in 11ms (Views: 2.1ms | ActiveRecord: 1.5ms | Allocations: 1742)
+
+
+Started GET "/api/v1/categories" for ::1 at 2022-07-29 18:39:39 +0530
+Processing by Api::V1::CategoriesController#index as */*
+  Parameters: {"name"=>"ramesh"}
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories"[0m
+  ↳ app/controllers/api/v1/categories_controller.rb:12:in `index'
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/categories_controller.rb:12:in `index'
+Completed 200 OK in 6ms (Views: 3.6ms | ActiveRecord: 0.8ms | Allocations: 1226)
+
+
+Started POST "/api/v1/categories" for ::1 at 2022-07-29 18:41:44 +0530
+Processing by Api::V1::CategoriesController#create as */*
+  Parameters: {"name"=>"ramesh"}
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/categories_controller.rb:25:in `create'
+  [1m[36mCategory Create (1.1ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "ramesh"], ["created_at", "2022-07-29 13:11:44.303006"], ["updated_at", "2022-07-29 13:11:44.303006"]]
+  ↳ app/controllers/api/v1/categories_controller.rb:25:in `create'
+  [1m[36mTRANSACTION (3.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/categories_controller.rb:25:in `create'
+Completed 200 OK in 26ms (Views: 0.4ms | ActiveRecord: 9.7ms | Allocations: 3979)
+
+
+Started POST "/api/v1/categories" for ::1 at 2022-07-29 18:41:48 +0530
+Processing by Api::V1::CategoriesController#create as */*
+  Parameters: {"name"=>"ramesh"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/categories_controller.rb:25:in `create'
+  [1m[36mCategory Create (1.0ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "ramesh"], ["created_at", "2022-07-29 13:11:48.748598"], ["updated_at", "2022-07-29 13:11:48.748598"]]
+  ↳ app/controllers/api/v1/categories_controller.rb:25:in `create'
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/categories_controller.rb:25:in `create'
+Completed 200 OK in 10ms (Views: 0.3ms | ActiveRecord: 4.4ms | Allocations: 1799)
+
+
+Started GET "/api_v1_categories" for ::1 at 2022-07-29 18:42:27 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/api_v1_categories"):
+  
