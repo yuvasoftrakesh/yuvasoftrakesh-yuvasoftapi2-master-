@@ -2575,3 +2575,15 @@ Migrating to AddAuthenticationTokenToUsers (20220524052654)
   [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(5191046984072633250)[0m
   [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2022-07-29 17:15:12 +0530
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/yuvaprateeksingh/.rvm/gems/ruby-2.7.6/gems/railties-6.1.5.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/yuvaprateeksingh/.rvm/gems/ruby-2.7.6/gems/railties-6.1.5.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 8.2ms | Allocations: 395)
+Completed 200 OK in 19ms (Views: 12.1ms | ActiveRecord: 0.0ms | Allocations: 3364)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2022-07-29 17:15:12 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
