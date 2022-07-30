@@ -2935,3 +2935,71 @@ Started GET "/api_v1_categories" for ::1 at 2022-07-29 18:42:27 +0530
   
 ActionController::RoutingError (No route matches [GET] "/api_v1_categories"):
   
+Started GET "/" for 127.0.0.1 at 2022-07-30 10:53:19 +0530
+  [1m[35m (3.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/yuvaprateeksingh/.rvm/gems/ruby-2.7.6/gems/railties-6.1.5.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/yuvaprateeksingh/.rvm/gems/ruby-2.7.6/gems/railties-6.1.5.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 11.3ms | Allocations: 289)
+Completed 200 OK in 27ms (Views: 18.3ms | ActiveRecord: 0.0ms | Allocations: 2233)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2022-07-30 10:53:20 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/api/v1/users" for 127.0.0.1 at 2022-07-30 10:54:04 +0530
+  
+ArgumentError (Before process_action callback :authenticate_request has not been defined):
+  
+app/controllers/api/v1/users_controller.rb:2:in `<class:UsersController>'
+app/controllers/api/v1/users_controller.rb:1:in `<main>'
+Started GET "/api/v1/categories" for 127.0.0.1 at 2022-07-30 10:54:27 +0530
+Processing by Api::V1::CategoriesController#index as HTML
+  [1m[35m (5.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories"[0m
+  ↳ app/controllers/api/v1/categories_controller.rb:12:in `index'
+  [1m[36mCategory Load (2.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories" LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/categories_controller.rb:12:in `index'
+Completed 200 OK in 30ms (Views: 7.9ms | ActiveRecord: 16.9ms | Allocations: 4397)
+
+
+Started GET "/" for ::1 at 2022-07-30 10:54:58 +0530
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/yuvaprateeksingh/.rvm/gems/ruby-2.7.6/gems/railties-6.1.5.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/yuvaprateeksingh/.rvm/gems/ruby-2.7.6/gems/railties-6.1.5.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 7.5ms | Allocations: 178)
+Completed 200 OK in 11ms (Views: 10.2ms | ActiveRecord: 0.0ms | Allocations: 792)
+
+
+Started GET "/favicon.ico" for ::1 at 2022-07-30 10:54:59 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/api/v1/categories/:id" for ::1 at 2022-07-30 10:55:11 +0530
+Processing by Api::V1::CategoriesController#show as HTML
+  Parameters: {"id"=>":id"}
+  [1m[36mCategory Load (4.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/categories_controller.rb:50:in `set_category'
+Completed 404 Not Found in 18ms (Views: 0.2ms | ActiveRecord: 4.6ms | Allocations: 1714)
+
+
+Started GET "/api_v1_blogs" for ::1 at 2022-07-30 10:55:31 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/api_v1_blogs"):
+  
+Started GET "/api/v1/blogs" for ::1 at 2022-07-30 10:55:48 +0530
+Processing by Api::V1::BlogsController#index as HTML
+  [1m[35m (45.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs"[0m
+  ↳ app/controllers/api/v1/blogs_controller.rb:12:in `index'
+  [1m[36mBlog Load (0.5ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/blogs_controller.rb:12:in `index'
+Completed 200 OK in 83ms (Views: 2.1ms | ActiveRecord: 53.2ms | Allocations: 2816)
+
+
+Started GET "/api/v1/teams" for ::1 at 2022-07-30 10:56:11 +0530
+Processing by Api::V1::TeamsController#index as HTML
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "teams"[0m
+  ↳ app/controllers/api/v1/teams_controller.rb:12:in `index'
+  [1m[36mTeam Load (0.4ms)[0m  [1m[34mSELECT "teams".* FROM "teams" LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/teams_controller.rb:12:in `index'
+Completed 200 OK in 15ms (Views: 2.0ms | ActiveRecord: 4.6ms | Allocations: 2724)
+
+
